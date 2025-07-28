@@ -3,12 +3,21 @@ import json
 
 from openai import OpenAI, BadRequestError
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from config import API_KEY, SYSTEM_PROMPT, USER_PROMPT, MODEL
 from models import FoodAnalysisResult
 
+
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 client = OpenAI(api_key=API_KEY)

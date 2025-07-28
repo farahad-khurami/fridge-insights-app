@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  min-height: 100vh;
+}
+
+.app-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #6366f1;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.upload-section {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.08);
+  padding: 2rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="file"] {
+  margin-bottom: 1rem;
+}
+
+button {
+  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.loader {
+  border: 6px solid #e0e7ff;
+  border-top: 6px solid #6366f1;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.results {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.08);
+  padding: 2rem;
+}
+
+.food-list, .recipe-list {
+  margin-bottom: 2rem;
+}
+
+.food-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.recipe {
+  margin-bottom: 1.5rem;
+}
+
+.recipe-title {
+  font-size: 1.2rem;
+  color: #6366f1;
+  margin-bottom: 0.5rem;
+}
+
+.ingredient-list {
+  margin: 0.5rem 0 0.5rem 1rem;
+}
+
+.instructions {
+  color: #374151;
+  font-size: 0.98rem;
+}
