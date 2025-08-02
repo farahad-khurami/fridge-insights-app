@@ -2,7 +2,7 @@ import base64
 import json
 
 from openai import OpenAI, BadRequestError
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
@@ -28,6 +28,8 @@ async def detect_food(image: UploadFile = File(...)):
 
     img_bytes = await image.read()
     img_b64 = base64.b64encode(img_bytes).decode("utf-8")
+
+    # Use fastapi BackroundTasks to compress and save image to disk, and file data and metadata to database
 
     try:
         res = client.responses.parse(
